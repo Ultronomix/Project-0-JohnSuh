@@ -1,9 +1,13 @@
 package com.github.project0;
-import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Counties {
 
-    public static HashSet<String> county = new HashSet<>();
+    private static TreeSet<String> county = new TreeSet<>();
+
+    public TreeSet<String> getCounty() {
+        return county;
+    }
 
     static {
         county.add("Madison");
