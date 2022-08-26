@@ -1,16 +1,15 @@
 package com.github.project0;
+import java.time.LocalDateTime;
 
 public class DateLocale extends Logs {
-    private int date;
+    private LocalDateTime date;
     private String county;
     private String species;
 
-    public int getDate() {
-        return date;
-    }
-
-    public void setDate(int date) {
+    DateLocale (LocalDateTime date, String county, String species){
         this.date = date;
+        this.county = county;
+        this.species = species;
     }
 
     @Override
@@ -20,6 +19,10 @@ public class DateLocale extends Logs {
 
     @Override
     String speciesName() {
-        return species; 
+        return species;
+    }
+
+    public String toString() {
+        return "You saw a " + species + " in " + county + " county on " + date + ".";
     }
 }

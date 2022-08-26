@@ -3,11 +3,7 @@ import java.util.TreeSet;
 
 public class Counties {
 
-    private static TreeSet<String> county = new TreeSet<>();
-
-    public TreeSet<String> getCounty() {
-        return county;
-    }
+    final static TreeSet<String> county = new TreeSet<>();
 
     static {
         county.add("Madison");

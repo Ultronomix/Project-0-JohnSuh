@@ -3,11 +3,7 @@ import java.util.HashSet;
 
 public class Cicada {
     
-    private static HashSet<String> species = new HashSet<>();
-
-    public HashSet<String> getSpecies() {
-        return species;
-    }
+    final static HashSet<String> species = new HashSet<>();
 
     static {
         species.add("Cicadettana calliope calliope");
