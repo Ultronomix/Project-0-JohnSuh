@@ -5,10 +5,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 import java.util.HashSet;
 
-import com.github.project0.common.datasource.ConnectionFactory;
+// import com.github.project0.common.datasource.ConnectionFactory;
+import com.github.project0.users.User;
+import com.github.project0.users.UserDAO;
 
 
 public class Body {
@@ -19,13 +22,27 @@ public class Body {
 
     public static void main(String[] args) {
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-            if (conn != null) {
-                System.out.println("Connection successful!");
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        // try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        //     if (conn != null) {
+        //         System.out.println("Connection successful!");
+        //     }
+        // } catch (SQLException e) {
+        //     throw new RuntimeException(e);
+        // }
+
+        UserDAO userDAO = new UserDAO();
+        List<User> users = userDAO.getAllUsers();
+
+        User newUser = new User();
+        newUser.setUsername("");
+        newUser.setGivenName("");
+        newUser.setEmail("");
+        newUser.setPassword("");
+
+        String newUserId = userDAO.save(newUser);
+        System.out.println(newUserId);
+
+        
 
         Scanner input = new Scanner(System.in);
         TreeSet<String> cnty = Counties.county;
