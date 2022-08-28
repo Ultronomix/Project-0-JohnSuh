@@ -1,10 +1,15 @@
 package com.github.project0;
 
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.HashSet;
+
+import com.github.project0.common.datasource.ConnectionFactory;
+
 
 public class Body {
 
@@ -13,6 +18,15 @@ public class Body {
     }
 
     public static void main(String[] args) {
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            if (conn != null) {
+                System.out.println("Connection successful!");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
         Scanner input = new Scanner(System.in);
         TreeSet<String> cnty = Counties.county;
         HashSet<String> ccda = Cicada.species;
