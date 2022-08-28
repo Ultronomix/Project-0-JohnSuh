@@ -25,9 +25,21 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.3.6</version>
+    </dependency>
   </dependencies>
 
   <build>
+    <finalName>Cicada</finalName>
+    <resources>
+      <resource>
+        <directory>src/resources</directory>
+      </resource>
+
+    </resources>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
