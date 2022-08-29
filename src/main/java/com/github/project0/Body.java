@@ -1,14 +1,13 @@
 package com.github.project0;
 
 import java.util.Scanner;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 import java.util.HashSet;
 
+import com.github.project0.common.util.AppContext;
 // import com.github.project0.common.datasource.ConnectionFactory;
 import com.github.project0.users.User;
 import com.github.project0.users.UserDAO;
@@ -22,25 +21,19 @@ public class Body {
 
     public static void main(String[] args) {
 
-        // try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-        //     if (conn != null) {
-        //         System.out.println("Connection successful!");
-        //     }
-        // } catch (SQLException e) {
-        //     throw new RuntimeException(e);
-        // }
+        // UserDAO userDAO = new UserDAO();
+        // List<User> users = userDAO.getAllUsers();
 
-        UserDAO userDAO = new UserDAO();
-        List<User> users = userDAO.getAllUsers();
+        // User newUser = new User();
+        // newUser.setUsername("");
+        // newUser.setGivenName("");
+        // newUser.setEmail("");
+        // newUser.setPassword("");
 
-        User newUser = new User();
-        newUser.setUsername("");
-        newUser.setGivenName("");
-        newUser.setEmail("");
-        newUser.setPassword("");
+        // String newUserId = userDAO.save(newUser);
+        // System.out.println(newUserId);
 
-        String newUserId = userDAO.save(newUser);
-        System.out.println(newUserId);
+        new AppContext().startApp();
 
         
 
@@ -51,9 +44,7 @@ public class Body {
         int user;
 
         do {
-            System.out.println("\nWelcome to the Sound of Cicadas, a personal cicada sighting program.");
-            System.out.println("Type the number for the option you want.");
-            System.out.println("1. Create a new log" + "\n2. View previous logs" + "\n3. Exit\n");
+
             user = input.nextInt();
             input.nextLine();
             switch (user) {
