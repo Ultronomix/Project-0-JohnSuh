@@ -1,13 +1,13 @@
 package com.github.project0;
-import java.time.LocalDateTime;
 
 public class DateLocale extends Logs {
-    private LocalDateTime date;
+
+    private String logDate;
     private String county;
     private String species;
 
-    DateLocale (LocalDateTime date, String county, String species){
-        this.date = date;
+    public DateLocale (String logDate, String county, String species){
+        this.logDate = logDate;
         this.county = county;
         this.species = species;
     }
@@ -21,8 +21,7 @@ public class DateLocale extends Logs {
     String speciesName() {
         return species;
     }
-
     public String toString() {
-        return "You saw a " + species + " in " + county + " county on " + date + ".";
+        return "You saw a " + species + " in " + county + " county on " + logDate + ".";
     }
 }

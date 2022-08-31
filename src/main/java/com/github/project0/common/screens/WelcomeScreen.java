@@ -1,7 +1,6 @@
 package com.github.project0.common.screens;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 import com.github.project0.common.util.AppContext;
 
@@ -15,7 +14,7 @@ public class WelcomeScreen extends AbstractScreen {
 
     public void render() throws IOException {
         String first = "Welcome to the Sound of Cicadas, a personal cicada sighting program.\n" +
-                       "Type the number for the option you want." +
+                       "Type the number for the option you want.\n" +
                        "1. Register\n" + "2. Login\n" + "3. Exit\n" +
                        "> ";
 

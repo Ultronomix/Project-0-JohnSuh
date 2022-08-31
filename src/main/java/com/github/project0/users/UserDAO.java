@@ -55,8 +55,6 @@ public class UserDAO {
 
             pstmt.executeUpdate();
 
-            conn.commit();
-
             ResultSet rs = pstmt.getGeneratedKeys();
             rs.next();
             user.setId(rs.getString("id"));
